@@ -1,3 +1,4 @@
+from Transfering import fromto
 def addition(arr1, arr2, znak):
     arr1=list(arr1)
     arr2=list(arr2)
@@ -6,6 +7,9 @@ def addition(arr1, arr2, znak):
         arr1.insert(0, 0)
     while len(arr2) < len(arr1):
         arr2.insert(0, 0)
+    if znak>10:
+        fromto(arr1)
+        fromto(arr2)
     arr1.reverse()
     arr2.reverse()
     
@@ -23,9 +27,12 @@ def addition(arr1, arr2, znak):
     arr3.insert(0,0)
     return arr3
 
-def multiply(arr1, arr2, znak,rtrn):
+def multiply(arr1, arr2, znak):
     arr1=list(arr1)
     arr2=list(arr2)
+    if znak>10:
+        fromto(arr1)
+        fromto(arr2)
     temp=[]
     for q in range(len(arr2)):
         test = []
@@ -45,16 +52,10 @@ def multiply(arr1, arr2, znak,rtrn):
         else:
             break
     array3.insert(0,0)
-       
-    if rtrn=='y':
-        str_array3 = ''
-        for i in range(len(array3)):
-            str_array3 += ''.join(str(array3[i]))
-        return str_array3
-    else:
-        return array3
+    
+    return array3
 
-def substraction(arr1, arr2, znak,rtrn):
+def substraction(arr1, arr2, znak):
     arr1 = list(arr1) #Type of variable that we waiting
     arr2 = list(arr2) 
     
@@ -87,12 +88,5 @@ def substraction(arr1, arr2, znak,rtrn):
             break
     arr3.insert(0,0)
     
-    if rtrn=='y':
-        str_array3 = ''
-        for i in range(len(arr3)):
-            str_array3 += ''.join(str(arr3[i]))
-        return str_array3
-    
-    else:
-        return arr3
+    return arr3
     
