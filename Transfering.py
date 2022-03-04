@@ -73,3 +73,96 @@ def naoborot(arr, znak):
         chislo += arr[i]*znak**i
     return chislo
 
+def f2to8(arr):
+    arr = list(arr)
+    if len(arr) >= 4:
+        while len(arr)%3 != 1 :
+            arr.insert(0, 0)
+    else :
+        while(len(arr)) != 4:
+            arr.insert(0, 0)
+    arr.reverse()
+    arr2 = []
+    arr3 = []
+    arr_r = []
+    for i in range(len(arr) // 3):
+        for q in range(3):
+            arr2.insert(0, arr[q+i*3])
+        arr3.insert(0, arr2)
+        arr2 = []
+    for i in range(len(arr3)):
+        if arr3[i]==[0, 0, 0]:
+            arr_r.insert(0, 0)
+        elif arr3[i]==[0, 0, 1]:
+            arr_r.insert(0, 1)    
+        elif arr3[i]==[0, 1, 0]:
+            arr_r.insert(0, 2)    
+        elif arr3[i]==[0, 1, 1]:
+            arr_r.insert(0, 3)    
+        elif arr3[i]==[1, 0, 0]:
+            arr_r.insert(0, 4)    
+        elif arr3[i]==[1, 0, 1]:
+            arr_r.insert(0, 5)    
+        elif arr3[i]==[1, 1, 0]:
+            arr_r.insert(0, 6)    
+        elif arr3[i]==[1, 1, 1]:
+            arr_r.insert(0, 7)
+    arr_r.reverse()
+    arr_r.insert(0, 0)
+    
+    return arr_r   
+
+def f2to16(arr):
+    arr = list(arr)
+    if len(arr) >= 5:
+        while len(arr)%4 != 1 :
+            arr.insert(0, 0)
+    else :
+        while(len(arr)) != 4:
+            arr.insert(0, 0)
+    arr.reverse()
+    arr2 = []
+    arr3 = []
+    arr_r = []
+    for i in range(len(arr) // 4):
+        for q in range(4):
+            arr2.insert(0, arr[q+i*4])
+        arr3.insert(0, arr2)
+        arr2 = []
+    for i in range(len(arr3)):
+        if arr3[i]==[0, 0, 0, 0]:
+            arr_r.insert(0, 0)
+        elif arr3[i]==[0, 0, 0, 1]:
+            arr_r.insert(0, 1)    
+        elif arr3[i]==[0, 0, 1, 0]:
+            arr_r.insert(0, 2)    
+        elif arr3[i]==[0, 0, 1, 1]:
+            arr_r.insert(0, 3)    
+        elif arr3[i]==[0, 1, 0, 0]:
+            arr_r.insert(0, 4)    
+        elif arr3[i]==[0, 1 ,0, 1]:
+            arr_r.insert(0, 5)    
+        elif arr3[i]==[0, 1, 1, 0]:
+            arr_r.insert(0, 6)    
+        elif arr3[i]==[0, 1, 1, 1]:
+            arr_r.insert(0, 7)
+        if arr3[i]==[1, 0, 0, 0]:
+            arr_r.insert(0, 8)
+        elif arr3[i]==[1, 0, 0, 1]:
+            arr_r.insert(0, 9)    
+        elif arr3[i]==[1, 0, 1, 0]:
+            arr_r.insert(0, 'A')    
+        elif arr3[i]==[1, 0, 1, 1]:
+            arr_r.insert(0, 'B')    
+        elif arr3[i]==[1, 1, 0, 0]:
+            arr_r.insert(0, 'C')    
+        elif arr3[i]==[1, 1, 0, 1]:
+            arr_r.insert(0, 'D')    
+        elif arr3[i]==[1, 1, 1, 0]:
+            arr_r.insert(0, 'E')    
+        elif arr3[i]==[1, 1, 1, 1]:
+            arr_r.insert(0, 'F')
+    arr_r.reverse()
+    arr_r.insert(0, 0)
+    
+    return arr_r   
