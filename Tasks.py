@@ -61,6 +61,21 @@ def naoborot(arr, znak):
     # znak - система счислений,в которую будем переводить
     arr = list(arr) # ожидаем от переменной тип 'list'
     arr.reverse()
+    if znak>10:
+        for i in range(len(arr)):
+            if type(arr[i])==str:
+                if arr[i]=='A':
+                    arr[i]=10
+                elif arr[i]=='B':
+                    arr[i]=11
+                elif arr[i]=='C':
+                    arr[i]=12
+                elif arr[i]=='D':
+                    arr[i]=13
+                elif arr[i]=='E':
+                    arr[i]=14
+                elif arr[i]=='F':
+                    arr[i]=15
     chislo = 0
     for i in range(len(arr)):
         chislo += int(arr[i])*znak**i
